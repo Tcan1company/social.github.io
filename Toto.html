@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <script>
+      
+    </script>
+    <style>
+    .menu {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.menu a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 01;
+  padding: 01;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a:hover {
+  background-color: rgb(0,0,0);
+}
+ /* Style pour le bouton de menu */
+      .menu-button {
+        height: 50px;
+        width: 50px;
+      background-color: rgb(255,255,255);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style pour la barre de navigation */
+      .bottom-section {
+         position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 0px;
+        padding:  20px;
+        background-color: rgb(6,168,28);
+      }
+
+      /* Style pour le bouton de partage */
+      .share-button {
+        height: 50px;
+        width: 50px;
+        background-color: rgb(255,255,255);
+        border-radius: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style pour la section Classe  */
+      .lasse-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+      }
+
+      /* Style pour la section Bibliothèque */
+      .Bibliothèque-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Style pour la section Infos */
+      .Infos-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Style pour la section Communaute  */
+      .Communaute -section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+      
+      
+     .navbar1 {
+       position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:rgb(255,158,15);
+      padding: 2px;
+      top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+    }
+
+    .bottom-section a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 2px;
+      border-radius: 500px;
+    }
+
+    .bottom-section a:hover {
+      background-color: rgb(215,132,10);
+    } 
+    </style>
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <div class="navbar1">
+      <!-- Bouton de partage -->
+      <div class="share-button">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+      </div>
+      <!-- Texte du titre -->
+      <h2>Sadauki e-learning</h2>
+<!-- Menu à droite -->
+<div class="menu-button">
+<button class="menu-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com 
+    License - https://fontawesome.com/license (Commercial License) 
+    Copyright 2023 Fonticons, Inc. -->
+    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+  </svg>
+</button>
+<ul class="menu-options">
+  <br><br><br><br><br><b><b>
+  <br><br><br><br><br><br><b><b>
+  <br><br><br><br><br>
+  <a href="#">Partager une image</a}>
+<a href="#">Partager une vidéo</a>
+  <a href="#">voir la boutique</a>
+  <a href="#">Signaler un problème</a>
+  <a href="#">Partager une vidéo</a>
+  <a href="#">voir la boutique</a>
+  <a href="#">Signaler un problème</a>
+  <a href="#">vide</a>
+  <a href="#">vide</a>
+  <a href="#">vide</a>
+</ul>
+
+<style>
+  .menu-button {
+    background-color: ;
+    border: none;
+    cursor: pointer;
+  }
+  .menu-options {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 340px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+  }
+  .menu-options a {
+    color: black;
+    padding: 0px 10px;
+    text-decoration: none;
+    display: block;
+    margin-top: 12px;
+  }
+  .menu-options a:hover {
+    background-color: rgb(23,253,4);
+  }
+  .menu-button:hover .menu-options {
+    display: block;
+  }
+</style>
+
+</div>
+</div>
+<!-- Section Classe  -->
+<div class="bottom-section">
+    <a href="#">classe </a>
+    <a href="http://localhost:8158/Biblio.html">Biblio</a>
+    <a href="http://localhost:8158/Short.html">Shorts</a>
+    <a href="#">Défis</a> 
+    <a href="#">disc</a>
+  </div><br><br><br><br>
+ <!-- le corps de mon site-->
+ <br><br><br>
+  <script>
+  const shareButton = document.querySelector('.share-button');
+  shareButton.addEventListener('click', function() {
+    window.location.href = 'http://localhost:8158/Profil.html';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<html>
+  <head>
+    <title>Créer votre profil</title>
+    <style>
+    
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 1px;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 30px;
+        background-color: rgb(33,102,242);
+        border-radius: 10px;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 2px;
+        font-size: 12px;
+        border-radius: 500px;
+        border: none;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .profile-picture-preview img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .profile-picture-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        background-color: #ffffff;
+        width: 200px;
+        margin: 1 auto;
+        margin-bottom: 1px;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+
+      .avatar-preview {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+   <h1>Créer votre profil</h1>
+    <form action="/create_profile" method="post">
+  <div class="profile-picture-preview">
+    <center>
+      <img id="profile_picture_preview" src="#" alt="Votre photo de profil">
+    </center>
+  </div>
+  <label for="profile_picture">Photo de profil:</label>
+  <input type="file" id="profile_picture" name="profile_picture">
+
+      <br><br>
+    <label for="nom">Nom :</label>
+  <input type="text" id="nom" name="nom" pattern="[a-zA-Z\s]+"  required placeholder="saisissez votre nom"><br><br>
+  
+  <label for="prenom">Prénom :</label>
+  <input type="text" id="prenom" name="prenom" pattern="[a-zA-Z\s]+" required placeholder="saisissez votre prenom"><br><br>
+  
+  <label for="numero">Numéro de téléphone :</label>
+  <input type="number" id="numero" name="numero" required placeholder="saisissez votre Numéro"><br><br>
+  
+<label for="country">Pays</label>
+<select id="country" name="country" onchange="updateRegions()">
+  <option value="">Sélectionnez un pays</option>
+  <option value="Algérie">Algérie</option>
+    <option value="Angola">Angola</option> 
+<option value="Bénin">Bénin</option> 
+<option value="Botswana">Botswana</option> 
+<option value="Burkina Faso">Burkina Faso</option> 
+<option value="Burundi">Burundi</option> 
+<option value="Cameroun">Cameroun</option> 
+<option value="Cap-Vert">Cap-Vert</option> 
+<option value="République centrafricaine">République centrafricaine</option> 
+<option value="Comores">Comores</option> 
+<option value="République démocratique du Congo">République démocratique du Congo</option> 
+<option value="République du Congo">République du Congo</option> 
+<option value="Côte d'Ivoire">Côte d'Ivoire</option> 
+<option value="Djibouti">Djibouti</option> 
+<option value="Égypte">Égypte</option> 
+<option value="Érythrée">Érythrée</option> 
+<option value="Éthiopie">Éthiopie</option> 
+<option value="Gabon">Gabon</option> 
+<option value="Gambie">Gambie</option> 
+<option value="Ghana">Ghana</option> 
+<option value="Guinée">Guinée</option> 
+<option value="Guinée-Bissau">Guinée-Bissau</option> 
+<option value="Kenya">Kenya</option> 
+<option value="Lesotho">Lesotho</option> 
+<option value="Liberia">Liberia</option> 
+<option value="Libye">Libye</option> 
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option> 
+<option value="Mali">Mali</option> 
+<option value="Maroc">Maroc</option> 
+<option value="Maurice">Maurice</option> 
+<option value="Mauritanie">Mauritanie</option> 
+<option value="Mozambique">Mozambique</option> 
+<option value="Namibie">Namibie</option> 
+<option value="Niger">Niger</option> 
+<option value="Nigeria">Nigeria</option> 
+<option value="Ouganda">Ouganda</option> 
+<option value="Rwanda">Rwanda</option> 
+<option value="Sénégal">Sénégal</option> 
+<option value="Seychelles">Seychelles</option> 
+<option value="Sierra Leone">Sierra Leone</option> 
+<option value="Somalie">Somalie</option> 
+<option value="Soudan">Soudan</option> 
+<option value="Soudan du Sud">Soudan du Sud</option> 
+<option value="Swaziland">Swaziland</option> 
+<option value="Tanzanie">Tanzanie</option> 
+<option value="Tchad">Tchad</option> 
+<option value="Togo">Togo</option> 
+<option value="Tunisie">Tunisie</option> 
+<option value="Zambie">Zambie</option> 
+<option value="Zimbabwe">Zimbabwe</option> 
+  </select><br><br>
+  <label for="region">Région</label>
+<select id="region" name="region" disabled>
+  <option value="">Sélectionnez une région</option>
+</select>
+
+<script>
+  const regionsByCountry = {
+    'Niger':  ['Agadez', 'Diffa', 'Dosso', 'Tahoua', 'Tillaberie', 'Maradi', 'Niamey', 'Zinder'],
+    'pays': ['', '', '', '', '', '', '', '', ''],
+    'pays': ['', '', '', '', '', '', '', '', ''],
+    'pays': ['', '', '', '', '', '', '', '', ''],
+    'Bénin': ['Cotonou', 'Porto-Novo', 'Parakou'],
+    // Ajouter ici toutes les régions pour chaque pays
+  };
+
+  function updateRegions() {
+    const countrySelect = document.getElementById('country');
+    const regionSelect = document.getElementById('region');
+    const selectedCountry = countrySelect.value;
+    const regions = regionsByCountry[selectedCountry];
+    
+    regionSelect.innerHTML = '';
+    regionSelect.disabled = !regions;
+
+    if (regions) {
+      regions.forEach(region => {
+        const option = document.createElement('option');
+        option.value = region;
+        option.text = region;
+        regionSelect.appendChild(option);
+      });
+    }
+  }
+</script>
+  <label for="statut">Statut :</label>
+  <input type="radio" id="student" name="profile" value="student">
+      <label for="student">Élève</label>
+      <input type="radio" id="teacher" name="profile" value="teacher">
+      <label for="teacher">Enseignant(e)</label>
+      <br><br>
+      <!-- Options pour les élèves -->
+      <div id="studentOptions" style="display: none;">
+        <h2>Choix de niveau :</h2>
+        <input type="radio" id="primary" name="level" value="primary">
+        <label for="primary">Primaire</label>
+        <input type="radio" id="secondary" name="level" value="secondary">
+        <label for="secondary">Collège</label>
+        <input type="radio" id="highSchool" name="level" value="highSchool">
+        <label for="highSchool">Lycée</label>
+        <br><br>
+        <!-- Options pour le niveau primaire -->
+        <div id="primaryOptions" style="display: none;">
+          <h2>Choix de classe :</h2>
+          <input type="radio" id="CI" name="class" value="CI">
+          <label for="CI">CI</label>
+          <input type="radio" id="CP" name="class" value="CP">
+          <label for="CP">CP</label>
+          <input type="radio" id="CE1" name="class" value="CE1">
+          <label for="CE1">CE1</label>
+          <input type="radio" id="CE2" name="class" value="CE2">
+          <label for="CE2">CE2</label>
+          <input type="radio" id="CM1" name="class" value="CM1">
+          <label for="CM1">CM1</label>
+          <input type="radio" id="CM2" name="class" value="CM2">
+          <label for="CM2">CM2</label>
+        </div>
+        <!-- Options pour le niveau secondaire -->
+        <div id="secondaryOptions" style="display: none;">
+          <h2>Choix de classe :</h2>
+          <input type="radio" id="6th" name="class" value="6th">
+          <label for="6th">6ième</label>
+          <input type="radio" id="5th" name="class" value="5th">
+          <label for="5th">5ième</label>
+          <input type="radio" id="4th" name="class" value="4th">
+          <label for="4th">4ième</label>
+          <input type="radio" id="3rd" name="class" value="3rd">
+          <label for="3rd">3ième</label>
+</div>
+<!-- Options pour le niveau lycée -->
+       <div id="highSchoolOptions" style="display: none;">
+          <h2>Choix de classe :</h2>
+          <input type="radio" id="2ndA" name="class" value="2ndA">
+          <label for="2ndA">2ndA</label>
+          <input type="radio" id="2ndC" name="class" value="2ndC">
+          <label for="2ndC">2ndC</label>
+         <input type="radio" id="1ereA" name="class" value="1ereA">
+         <label for="1ereA">1ereA</label>
+         <input type="radio" id="1ereC" name="class" value="1ereC">
+        <label for="1ereC">1ereC</label>
+        <input type="radio" id="1ereD" name="class" value="1ereD">
+        <label for="1ereD">1ereD</label>
+        <input type="radio" id="TA" name="class" value="TA">
+        <label for="TA">TA</label>
+        <input type="radio" id="TC" name="class" value="TC">
+        <label for="TC">TC</label>
+        <input type="radio" id="TD" name="class" value="TD">
+        <label for="TD">TD</label>
+      </div>  
+</div>
+<!-- Options pour les professeurs -->
+<div id="teacherOptions" style="display: none;">
+<h2>Choix de niveau :</h2>
+<select id="niveau" name="niveau" onchange="updateMatieres()">
+  <option value="">Sélectionnez un niveau</option>
+  <option value="primaire">Primaire</option>
+  <option value="college">Collège</option>
+  <option value="lycee">Lycée</option>
+  <option value="college-lycee">Collège et Lycée</option>
+</select>
+<div id="matieres-container" style="display:none">
+  <label for="matieres">Matières :</label>
+  <select id="matieres" name="matieres[]" multiple>
+    <!-- Les options pour les matières seront ajoutées dynamiquement en fonction de la sélection de niveau -->
+  </select>
+  </div>
+</div>
+<br><br>
+  <!-- le code précédent -->
+  <input type="submit" value="Suivant">
+</form>
+<script>
+  document.querySelector("input[type='submit']").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "http://localhost:8158/Création du compte.html";
+  });
+</script>
+    </form>
+    <script>
+     document.getElementById("profile_picture").addEventListener("change", function() {
+  const preview = document.getElementById("profile_picture_preview");
+  const file = this.files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener("load", function() {
+    preview.src = reader.result;
+  });
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+      <!-- Script pour afficher les options en fonction du profil choisi -->
+      
+  // Récupération des éléments
+  const studentRadio = document.querySelector("#student");
+  const teacherRadio = document.querySelector("#teacher");
+  const studentOptions = document.querySelector("#studentOptions");
+  const teacherOptions = document.querySelector("#teacherOptions");
+  const primaryRadio = document.querySelector("#primary");
+  const secondaryRadio = document.querySelector("#secondary");
+  const highSchoolRadio = document.querySelector("#highSchool");
+  const primaryOptions = document.querySelector("#primaryOptions");
+  const secondaryOptions = document.querySelector("#secondaryOptions");
+  const highSchoolOptions = document.querySelector("#highSchoolOptions");
+  
+  // Fonction pour afficher les options en fonction du profil choisi
+  function showOptions() {
+    if (studentRadio.checked) {
+      studentOptions.style.display = "block";
+      teacherOptions.style.display = "none";
+    } else if (teacherRadio.checked) {
+      studentOptions.style.display = "none";
+      teacherOptions.style.display = "block";
+    }
+  }
+
+  // Fonction pour afficher les options en fonction du niveau choisi
+function showLevelOptions() {
+  if (primaryRadio.checked) {
+    primaryOptions.style.display = "block";
+    secondaryOptions.style.display = "none";
+    highSchoolOptions.style.display = "none";
+  } else if (secondaryRadio.checked) {
+    primaryOptions.style.display = "none";
+    secondaryOptions.style.display = "block";
+    highSchoolOptions.style.display = "none";
+  } else if (highSchoolRadio.checked) {
+    primaryOptions.style.display = "none";
+    secondaryOptions.style.display = "none";
+    highSchoolOptions.style.display = "block";
+  }
+}
+  // Ajout d'écouteurs d'événements pour les boutons radio
+  studentRadio.addEventListener("change", showOptions);
+  teacherRadio.addEventListener("change", showOptions);
+  primaryRadio.addEventListener("change", showLevelOptions);
+  secondaryRadio.addEventListener("change", showLevelOptions);
+  highSchoolRadio.addEventListener("change", showLevelOptions);
+  
+
+// Afficher les options par défaut
+showOptions();
+showLevelOptions();
+function updateMatieres() {
+  var niveau = document.getElementById("niveau").value;
+  var matieresSelect = document.getElementById("matieres");
+  var matieresContainer = document.getElementById("matieres-container");
+  matieresSelect.innerHTML = "";
+  if (niveau == "primaire") {
+    matieresContainer.style.display = "none";
+  } else {
+    matieresContainer.style.display = "block";
+    var matieres = [];
+    if (niveau == "college" || niveau == "college-lycee") {
+  
+      matieres.push("Mathématiques");
+      matieres.push("Physique-Chimie");
+      matieres.push("SVT");
+      matieres.push("Français");
+      matieres.push("ANG");
+      matieres.push("Histoire-Géo");
+      matieres.push("EF");
+      matieres.push("ICM");
+      matieres.push("Sciences");
+    }
+    if (niveau == "lycee" || niveau == "college-lycee") {
+      matieres.push("Mathématiques");
+      matieres.push("Physique-Chimie");
+      matieres.push("SVT");
+      matieres.push("Français");
+      matieres.push("ANG");
+      matieres.push("Histoire-Géo");
+      matieres.push("Philosophie");
+      matieres.push("Espagnol");
+      matieres.push("EF");
+      matieres.push("ICM");
+      matieres.push("Sciences");
+    }
+    for (var i = 0; i < matieres.length; i++) {
+      var option = document.createElement("option");
+      option.value = matieres[i];
+      option.text = matieres[i];
+      matieresSelect.appendChild(option);
+    }
+  }
+}
+
+</script>
+    </script>
+  </body>
+</html>

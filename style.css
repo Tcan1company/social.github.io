@@ -1,0 +1,189 @@
+/* Couleurs */
+:root {
+--primary-color: rgb(255,255,255);
+--secondary-color: rgb(4,174,47);
+--tertiary-color: rgb(250,127,29);
+--quaternary-color:rgb(0,0,0);
+}
+
+/* Style global */
+body {
+background-color: var(--secondary-color);
+font-family: "Roboto", sans-serif;
+font-size: 10px;
+color: rgb(21,22,22);
+line-height: 1.3;
+margin: 10;
+}
+
+/* En-tête */
+header {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+padding: 0.2rem;
+text-align: center;
+}
+
+header h1 {
+font-size: 4rem;
+margin: 0;
+font-family: "Pacifico", cursive;
+}
+
+/* Menu de navigation */
+nav {
+background-color: var(--tertiary-color);
+color: var(--secondary-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0rem;
+font-family: "Montserrat", sans-serif;
+font-size: 1.2rem;
+}
+
+nav a {
+color: var(--secondary-color);
+font-weight: bold;
+text-decoration: none;
+margin: 0 0rem;
+transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+color: var(--quaternary-color);
+}
+
+/* Articles */
+article {
+background-color: var(--secondary-color);
+border: 0.1px solid var(--primary-color);
+margin: 0.5rem 0;
+padding: 0.1rem;
+}
+
+article h2 {
+font-size: 1rem;
+margin-top: 0;
+font-family: "Montserrat", sans-serif;
+font-weight: bold;
+}
+
+article p {
+margin-bottom: 1.5rem;
+font-family: "Roboto", sans-serif;
+font-size: 1rem;
+line-height: 1;
+}
+
+/* Bouton lire la suite */
+.read-more {
+background-color: var(--tertiary-color);
+color: var(--secondary-color);
+border: none;
+padding: 0.1rem 0.2rem;
+font-family: "Montserrat", sans-serif;
+font-size: 0.2rem;
+font-weight: bold;
+text-transform: uppercase;
+cursor: pointer;
+transition: background-color 0.3s ease-in-out;
+}
+
+.read-more:hover {
+background-color: var(--quaternary-color);
+}
+
+/* Pied de page */
+footer {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+padding: 0.2rem;
+text-align: center;
+font-family: "Roboto", sans-serif;
+font-size: 1rem;
+}
+
+footer p {
+margin-bottom: 0.1rem;
+}
+
+footer a {
+color: var(--secondary-color);
+font-weight: bold;
+text-decoration: none;
+transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+color: var(--quaternary-color);
+}
+.bottom-section {
+         position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 0px;
+        padding:  20px;
+        background-color: rgb(6,168,28);
+      }
+      .classe-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+      }
+      /* Style pour la section Bibliothèque */
+      .Bibliothèque-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Style pour la section Annonces */
+      .Annonces-section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Style pour la section Communaute  */
+      .Communaute -section {
+        background-color: #fff;
+        height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+      .bottom-section a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 10px 2px;
+        border-radius: 500px;
+      }
+  
+      .bottom-section a:hover {
+        background-color: rgb(215,132,10);
+      } 

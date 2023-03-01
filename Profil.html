@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Profil utilisateur</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+	.navbar1 {
+       position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:rgb(255,158,15);
+      padding: 2px;
+      top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+    }
+    
+		body {
+			background-color: #f1f1f1;
+		}
+		.profile-header {
+			background-color: #3b5998;
+			padding: 30px;
+			color: #fff;
+		}
+		.profile-picture {
+			width: 200px;
+			height: 200px;
+			background-color: #fff;
+			border: 5px solid #fff;
+			border-radius: 100%;
+			margin-top: -30px;
+			margin-bottom: 2px;
+		}
+		.profile-prenom {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.profile-level {
+			font-size: 20px;
+			color: #000;
+			margin-top: 1px;
+			margin-bottom: 20px;
+		}
+		.profile-class {
+			font-size: 20px;
+			color: #000;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+		.profile-Statut  {
+			font-size: 18px;
+			color: #000;
+			margin-bottom: 2px;
+		}
+		.profile-Statut  span {
+			font-weight: bold;
+			color: #000;
+		}
+		.profile-button {
+			margin-right: 1px;
+			margin-top: 20px;
+			border-radius: 50000px;
+		}
+		.profile-button a {
+			color: #fff;
+			text-decoration: none;
+		}
+				text-decoration: underline;
+			text-decoration: underline;
+			text-decoration: underline;
+			text-decoration: underline;
+		}
+		
+		.menu {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.menu a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 01;
+  padding: 01;
+}
+
+.menu li {
+  float: right;
+}
+
+.menu li a:hover {
+  background-color: rgb(0,0,0);
+}
+ /* Style pour le bouton de menu */
+      .menu-button {
+        height: 50px;
+        width: 50px;
+      background-color: rgb(255,255,255);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="profile-header">
+					<div class="profile-picture"></div>
+					<div class="profile-name">Souleymane</div>
+					<div class="profile-prenom">Oumarou</div>
+					<div class="profile-level">Niveau: Lycée</div>
+					<div class="profile-class">Classe : TD</div>
+					<div class="profile-Statut ">Statut : <span>Élèves</span></div>
+					<button type="button" class="btn btn-primary profile-button">Inviter un ami</button>
+					<button type="button" class="btn btn-primary profile-button">Créer un groupe</button>
+					<div class="menu-button">
+					  
+<div class="menu-button">
+<button class="menu-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com 
+    License - https://fontawesome.com/license (Commercial License) 
+    Copyright 2023 Fonticons, Inc. -->
+    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+  </svg>
+</button>
+<ul class="menu-options">
+  <br><br><br><br><br><b><b>
+  <br><br><br><br><br><br><b><b>
+  <br><br><br><br><br>
+  <a href="#">Partager une image</a}>
+<a href="#">Partager une vidéo</a>
+  <a href="#">voir la boutique</a>
+  <a href="#">Signaler un problème</a>
+  <a href="#">Partager une vidéo</a>
+  <a href="#">voir la boutique</a>
+  <a href="#">Signaler un problème</a>
+  <a href="#">vide</a>
+  <a href="#">vide</a>
+  <a href="#">vide</a>
+</ul>
+
+<style>
+  .menu-button {
+    background-color: ;
+    border: none;
+    cursor: pointer;
+  }
+  .menu-options {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 340px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+  }
+  .menu-options a {
+    color: black;
+    padding: 0px 10px;
+    text-decoration: none;
+    display: block;
+    margin-top: 12px;
+  }
+  .menu-options a:hover {
+    background-color: rgb(23,253,4);
+  }
+  .menu-button:hover .menu-options {
+    display: block;
+  }
+</style>
+
+</div>
+</div>
+				</div>
+			</div>
+		</div>
+
+
+<div class="voyons-voir">
+<div class="col-md-9">
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Publications</h5>
+<p class="card-text">Affiche toutes vos publications.</p>
+	<a href="#" class="btn btn-primary">Voir mes publications</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Amis</h5>
+							<p class="card-text">Trouver tous vos amis</p>
+							<a href="#" class="btn btn-primary">Voir mes amis</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Mes défis</h5>
+							<p class="card-text">Trouver tous les défis auxquels vous avez participé.</p>
+							<a href="#" class="btn btn-primary">Voir mes défis</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 30px;
+        background-color: rgba(232,123,123,0.855);
+        border-radius: 10px;
+        
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+ <body>
+    <center><h1>Créer un compte</h1></center>
+    <form id="form1">
+      <p>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+      </p>
+      <br>
+      <p>
+        <label for="confirmPassword">Confirmez le mot de passe :</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+      </p>
+      <p>
+        <input type="button" value="Créer mon compte" onclick="submitForm()" />
+      </p>
+    </form>
+    <p id="message" class="error"></p>
+    <script>
+      function submitForm() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var message = document.getElementById("message");
+        
+        
+        if (!password) {
+          message.innerHTML = "Veuillez saisir un mot de passe";
+          return;
+        }
+        
+        if (password !== confirmPassword) {
+          message.innerHTML = "Les mots de passe ne correspondent pas";
+          return;
+        }
+        
+        message.innerHTML = "";
+        window.location.href = "http://localhost:8158/Toto.html";
+      }
+    </script>
+  </body>
+</html>
